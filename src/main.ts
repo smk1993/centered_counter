@@ -11,14 +11,15 @@ const start_at_control = document.getElementById(
 const step_control = document.getElementById("step") as HTMLInputElement;
 
 start_at_control?.addEventListener("change", (e: Event) => {
-  const target = e.target as HTMLInputElement;
-  start_at_control.value = target.value;
+  const startValue = parseInt((<HTMLInputElement>start_at_control).value);
+  count = factory(startValue);
+  update_count();
 });
 
 step_control?.addEventListener("change", (e: Event) => {
-  const target = e.target as HTMLInputElement;
-
-  step_control.value = target.value;
+  const stepValue = parseInt((<HTMLInputElement>step_control).value);
+  count = factory(count(), stepValue);
+  update_count();
 });
 
 const count_button = document.querySelector(
@@ -30,19 +31,10 @@ const current_count = document.querySelector(
 ) as HTMLSpanElement;
 
 function update_count() {
-const start = parseInt(start_at_control.value , 10) 
-let step =  parseInt(step_control.value , 10);
-const current_value = parseInt(current_count.innerHTML , 10);
-if(current_value == 0) {
-  const value = factory(start , step);
-  current_count.innerHTML = value().toString();
-} else {
-  const value = factory(current_value , step);
-  current_count.innerHTML = value().toString();
+
+current_count.innerText = String(count());
 }
 
 
-
-}
 
 count_button.addEventListener("click", update_count);
