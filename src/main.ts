@@ -32,7 +32,7 @@ const current_count = document.querySelector(
 
 function update_count() {
 
-current_count.innerText = String(count());
+  current_count.innerText = String(count());
 }
 
 

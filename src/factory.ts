@@ -5,12 +5,12 @@
  * @param {number} [step] - The step to increment each number in the sequence. Default is 1.
  * @returns {Function} - A function that generates the number sequence every time it is called.
  */
-export const factory = (start? : number, step?: number) => {
+export const factory = (start?: number, step?: number) => {
     let count = start ?? 0;
 
-  return () => {
-    const currentCount = count;
-    count += step ?? 1;
-    return currentCount + (step ?? 1);
-  };
+    return () => {
+        const currentCount = count;
+        count += step ?? 1;
+        return currentCount + (step ?? 1);
+    };
 }

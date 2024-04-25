@@ -31,7 +31,7 @@ main {
 .control label {
 	display: block;
 	color: darkgreen;
-	margin-bottom:.2rem;
+	margin-bottom: .2rem;
 	text-transform: uppercase;
 }
 
@@ -52,7 +52,7 @@ main {
 }
 
 .count_button:active {
-	box-shadow: none ;
+	box-shadow: none;
 	box-shadow: 1px 1px 1px 1px #557668;
 }
 
@@ -61,6 +61,7 @@ main {
 	font-weight: bold;
 	color: darkgreen;
 }
+
 .btn {
 	display: flex;
 	align-items: center;
